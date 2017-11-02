@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript" src=assets/javascript/app.js></script>
+
+<style type="text/css">
+
+	h1 { text-align: center;
+		margin:auto;
+		margin-bottom: 10px;
+		font-size: 100px;
+	}
+	
+	.btn {  
+
+		width: 200px;
+		margin:auto;
+		margin-bottom: 20px;
+	}
+
+	#doneButton {
+		margin-top:20px;
+	}
+
+	.mainSection {
+		width: 900px;
+		border: solid 3px limegreen;
+		margin:auto;
+		padding: 30px;
+
+	}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container-fluid">
+	<div id="countdownTimer"><h1>5:00</h1></div>
+
+	<button type="button" class="btn btn-primary btn-lg btn-block" id="startButton">START QUIZ</button>
+
+	<div class="mainSection">
+
+		<!-- Question 1 -->
+		<div id="q1">
+			<h4>QUESTION 1</h4>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+			    This is correct.
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+			    This is incorrect
+			  </label>
+			</div>
+		</div>	
+
+		<!-- Question 2 -->
+		<div id="q2">
+			<h4>QUESTION 2</h4>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+			    This is correct.
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+			    This is incorrect
+			  </label>
+			</div>
+		</div>	
+
+		<!-- Question 3 -->
+		<div id="q3">
+			<h4>QUESTION 3</h4>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+			    This is correct.
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+			    This is incorrect
+			  </label>
+			</div>
+		</div>
+		
+		<!-- Question 4 -->
+		<div id="q4">
+			<h4>QUESTION 4</h4>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+			    This is correct.
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+			    This is incorrect
+			  </label>
+			</div>
+		</div>
+
+		<!-- Question 5 -->
+		<div id="q5">
+			<h4>QUESTION 5</h4>
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+			    This is correct.
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+			    This is incorrect
+			  </label>
+			</div>
+
+			<div class="radio">
+			  <label>
+			    <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+			    This is incorrect
+			  </label>
+			</div>
+		</div>
+	</div>
+
+	<button type="button" class="btn btn-primary btn-lg btn-block" id="doneButton">DONE!</button>
+
+</div>
+
+
+
+</body>
+</html>
