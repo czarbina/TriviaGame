@@ -21,7 +21,12 @@ $( document ).ready(function() {
     function decrement() {
     	countdownTimer--;
     	console.log(countdownTimer);
-    	$("span").text(" " + countdownTimer);
+    	$("span").text(" " + countdownTimer); 
+    	if (countdownTimer === 0) {
+    		stop();
+    	// Find way to display correct answers.
+    	// Hide questions and countdown timer
+    	}
     }
 
     $("#doneButton").on("click", stop);
