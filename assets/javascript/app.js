@@ -4,15 +4,16 @@ $( document ).ready(function() {
     console.log( "ready!" );
 
 // Something to hold our countdown timer. May want to eventually "convert" s to min.
-    var countdownTimer = 300;
+    var countdownTimer = 60;
   
  // Will store a value for decrement value that will be used in a start funciton on a click
  // method.   
     var intervalId;
 
  // Creating a button click event that will start the game, and begin the countdownTimers.
-	$("button").on("click", start); 
-	
+	$("#startButton").on("click", start); 
+
+
 	function start() {
       intervalId = setInterval(decrement, 1000);
     }
@@ -20,8 +21,18 @@ $( document ).ready(function() {
     function decrement() {
     	countdownTimer--;
     	console.log(countdownTimer);
+    	$("span").text(" " + countdownTimer);
     }
+
+    $("#doneButton").on("click", stop);
+
+    function stop() {
+    	clearInterval(intervalId);
+    	console.log("You stopped the timer!")	
+
+    	}
 	
+	// if (countdownTimer===0 || ) {}
 	
 
 });
