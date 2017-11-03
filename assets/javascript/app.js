@@ -1,59 +1,108 @@
-// Experience has taught me to always have this... 
-// So until I fully comprehend why I will now always have my logic in a ready function.
-$( document ).ready(function() {
-    console.log( "ready!" );
 
-// Something to hold our countdown timer. May want to eventually "convert" s to min.
-    var countdownTimer = 60;    
+$(document).ready(function(){
+
+	var countdownTimer = 60;    
     var intervalId;
-    var userAnswers = [];
-
-        $(".quiz").each(function() {
-
-            var questionID = $(this).attr("id");
-            var answer = $("input[name='choice']:checked", $(this)).val();
-
-            if (answer !==undefined) {
-                userAnswers.push({
-                    question: questionID,
-                    answer: answer
-                });
-            }
-        });  
-
-$("#startButton").on("click", start); 
-
-    function start() {
-      intervalId = setInterval(decrement, 1000);
-    
-    function decrement() {
-    	countdownTimer--;
-    	$("span").text(" " + countdownTimer); 
-    	if (countdownTimer === 0) {
-    		stop();
-    	// Find way to display correct answers.
-    	// Hide questions and countdown timer
-    	}
-    }
-    // $.each($("input[name='choice']:checked"), function(){
-        
-    // }
-    
-$("#doneButton").on("click", stop);
 
     function stop() {
     	clearInterval(intervalId);
-        
-     }     
-        
-console.log(userAnswers);
-console.log("You stopped the timer!");
-};
-});
+    }
+
+    var totalQs = 5;
+    var correctAs = 0;
+
+    function grade() {
+    	var i;
+
+    	var a1 = document.getElementsByName("q1");
+    		for (i = 0; i < a1.length; i++) {
+    			if (a1[i].checked) {
+    				if(a1[i].value == "1") {
+    					correctAs++;
+    					break;
+    				}
+    			}
+    		}
+
+    	var a2 = document.getElementsByName("q2");
+    		for (i = 0; i < a2.length; i++) {
+    			if (a2[i].checked) {
+    				if(a2[i].value == "2") {
+    					correctAs++;
+    					break;
+    				}
+    			}
+    		}
+    		
+    	var a3 = document.getElementsByName("q3");
+    		for (i = 0; i < a3.length; i++) {
+    			if (a3[i].checked) {
+    				if(a3[i].value == "3") {
+    					correctAs++;
+    					break;
+    				}
+    			}
+    		}
+    	var a4 = document.getElementsByName("q4");
+    		for (i = 0; i < a4.length; i++) {
+    			if (a4[i].checked) {
+    				if(a4[i].value == "4") {
+    					correctAs++;
+    					break;
+    				}
+    			}
+    		}
+
+    	var a5 = document.getElementsByName("q5");
+    		for (i = 0; i < a5.length; i++) {
+    			if (a5[i].checked) {
+    				if(a5[i].value == "1") {
+    					correctAs++;
+    					break;
+    				}
+    			}
+    		}	
+    	if(correctAs == totalQs) {
+    		console.log("Nailed it.");
+    	}
+
+    	else {
+    		console.log("You got " + correctAs + " out of " + totalQs + " correct!");		
+    	}		
+
+    }	
+
+	$("#startButton").on("click", start);
+
+   	function start() {
+   		$("#mainSection").css("display","block");
+   		$("#start").hide();
+
+      	intervalId = setInterval(decrement, 1000);
     
+    	function decrement() {
+	    	countdownTimer--;
+	    	$("span").text(" " + countdownTimer); 
+	    	if (countdownTimer === 0) {
+	    	stop();
+	    	grade();
+	    	$("#results").css("display","block").text(correctAs);
+			$("#mainSection").hide();
+    		}
+    	}	
+	}		
+
+	$("#doneBtn").on("click", function(){
+		stop();
+		grade();
+        $("#results").css("display","block").text(correctAs);
+		$("#mainSection").hide();
+
+	});
+
+});	
 
 
-    	
-	
-	// if (countdownTimer===0 || ) {}
-	
+
+
+
