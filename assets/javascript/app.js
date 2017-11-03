@@ -107,7 +107,7 @@ $(document).ready(function(){
 	    	if (countdownTimer === 0) {
 	    	stop();
 	    	grade();
-	    	$("#results").css("display","block").text(correctAs);
+	    	$("#results").css("display","block").text("You got " + correctAs + " out of 5 correct!");
 			$("#mainSection").hide();
     		}
     	}	
