@@ -86,7 +86,7 @@ $(document).ready(function(){
 	    	if (countdownTimer === 0) {
 	    	stop();
 	    	grade();
-	    	$("#results").css("display","block")
+	    	$("#results").css("display","block").text(correctAs);
 			$("#mainSection").hide();
     		}
     	}	
