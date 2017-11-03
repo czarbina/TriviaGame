@@ -4,6 +4,10 @@ $(document).ready(function(){
 	var countdownTimer = 60;    
     var intervalId;
 
+    function stop() {
+    	clearInterval(intervalId);
+    }
+
 	$("#startButton").on("click", start);
 
    	function start() {
@@ -22,8 +26,10 @@ $(document).ready(function(){
 	}	
 
 	$("#doneBtn").on("click", function(){
-		$("#results").css("display","block")
+		stop();
+        $("#results").css("display","block")
 		$("#mainSection").hide();
-	});
 
-});
+	});
+});	
+
