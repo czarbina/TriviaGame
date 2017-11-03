@@ -4,23 +4,30 @@ $( document ).ready(function() {
     console.log( "ready!" );
 
 // Something to hold our countdown timer. May want to eventually "convert" s to min.
-    var countdownTimer = 60;
-  
- // Will store a value for decrement value that will be used in a start funciton on a click
- // method.   
+    var countdownTimer = 60;    
     var intervalId;
+    var userAnswers = [];
 
- // Creating a button click event that will start the game, and begin the countdownTimers.
-	$("#startButton").on("click", start); 
+        $(".quiz").each(function() {
 
+            var questionID = $(this).attr("id");
+            var answer = $("input[name='choice']:checked", $(this)).val();
 
-	function start() {
+            if (answer !==undefined) {
+                userAnswers.push({
+                    question: questionID,
+                    answer: answer
+                });
+            }
+        });  
+
+$("#startButton").on("click", start); 
+
+    function start() {
       intervalId = setInterval(decrement, 1000);
-    }
-
+    
     function decrement() {
     	countdownTimer--;
-    	console.log(countdownTimer);
     	$("span").text(" " + countdownTimer); 
     	if (countdownTimer === 0) {
     		stop();
@@ -28,16 +35,25 @@ $( document ).ready(function() {
     	// Hide questions and countdown timer
     	}
     }
-
-    $("#doneButton").on("click", stop);
+    // $.each($("input[name='choice']:checked"), function(){
+        
+    // }
+    
+$("#doneButton").on("click", stop);
 
     function stop() {
     	clearInterval(intervalId);
-    	console.log("You stopped the timer!")	
+        
+     }     
+        
+console.log(userAnswers);
+console.log("You stopped the timer!");
+};
+});
+    
 
-    	}
+
+    	
 	
 	// if (countdownTimer===0 || ) {}
 	
-
-});
