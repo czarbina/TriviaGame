@@ -1,16 +1,27 @@
-
+// Just... always.
 $(document).ready(function(){
 
+// Some global variables and functions that I can access and call
+// when necessary.
 	var countdownTimer = 60;    
     var intervalId;
 
+// Stops the decrementing of my timer.
     function stop() {
     	clearInterval(intervalId);
     }
 
+// Made these two variables global so I can access them when I 
+// "grade" my quiz.
     var totalQs = 5;
     var correctAs = 0;
 
+// Apparently radios are treated as arrays in a way when 
+// multiple radios fall into a particular name group. So
+// I had to check each individual question for the "correct"
+// answer and add each one to the correctAs var that I stored
+// globally. I believe the "break" causes it treat each radio
+// q group separately instead of running them all at once.
     function grade() {
     	var i;
 
@@ -62,6 +73,9 @@ $(document).ready(function(){
     				}
     			}
     		}	
+
+// I don't think this if/else statement is necessary. But it helped me
+// figure out if I was on the right track.            
     	if(correctAs == totalQs) {
     		console.log("Nailed it.");
     	}
@@ -72,14 +86,21 @@ $(document).ready(function(){
 
     }	
 
+// I run my start function after clicking the button to being the test.
 	$("#startButton").on("click", start);
 
+// This function does several things. It hides the #start div 
+// to reveal the form and it's questions. It also begins the timer 
    	function start() {
    		$("#mainSection").css("display","block");
    		$("#start").hide();
 
       	intervalId = setInterval(decrement, 1000);
     
+// As a part of the start function, the time interval is decreasing.
+// Once the timer hit's zero, we call the stop function (to prevent the timer
+// from going into the negatives) and the grade function which tallies up
+// the score. We also hide the form to reveal said score.    
     	function decrement() {
 	    	countdownTimer--;
 	    	$("span").text(" " + countdownTimer); 
@@ -92,6 +113,9 @@ $(document).ready(function(){
     	}	
 	}		
 
+// If the user finishes the quiz before time is up, the clicking of the doneBtn
+// will trigger a funciton that will also stop the timer, tabulate the results, 
+// and display the score.
 	$("#doneBtn").on("click", function(){
 		stop();
 		grade();
