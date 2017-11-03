@@ -28,7 +28,7 @@ $(document).ready(function(){
     	var a1 = document.getElementsByName("q1");
     		for (i = 0; i < a1.length; i++) {
     			if (a1[i].checked) {
-    				if(a1[i].value == "1") {
+    				if(a1[i].value == "2") {
     					correctAs++;
     					break;
     				}
@@ -38,7 +38,7 @@ $(document).ready(function(){
     	var a2 = document.getElementsByName("q2");
     		for (i = 0; i < a2.length; i++) {
     			if (a2[i].checked) {
-    				if(a2[i].value == "2") {
+    				if(a2[i].value == "1") {
     					correctAs++;
     					break;
     				}
@@ -57,7 +57,7 @@ $(document).ready(function(){
     	var a4 = document.getElementsByName("q4");
     		for (i = 0; i < a4.length; i++) {
     			if (a4[i].checked) {
-    				if(a4[i].value == "4") {
+    				if(a4[i].value == "3") {
     					correctAs++;
     					break;
     				}
@@ -67,7 +67,7 @@ $(document).ready(function(){
     	var a5 = document.getElementsByName("q5");
     		for (i = 0; i < a5.length; i++) {
     			if (a5[i].checked) {
-    				if(a5[i].value == "1") {
+    				if(a5[i].value == "4") {
     					correctAs++;
     					break;
     				}
