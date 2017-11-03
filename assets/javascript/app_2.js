@@ -8,11 +8,10 @@ $(document).ready(function(){
     	clearInterval(intervalId);
     }
 
+    var totalQs = 5;
+    var correctAs = 0;
+
     function grade() {
-    	var totalQs = 5;
-    	var correctAs = 0;
-    //May update or exclude below var 
-    	var alertText;
     	var i;
 
     	var a1 = document.getElementsByName("q1");
@@ -36,7 +35,7 @@ $(document).ready(function(){
     		}
     		
     	var a3 = document.getElementsByName("q3");
-    		for (i = 0; i < a1.length; i++) {
+    		for (i = 0; i < a3.length; i++) {
     			if (a3[i].checked) {
     				if(a3[i].value == "3") {
     					correctAs++;
@@ -68,7 +67,7 @@ $(document).ready(function(){
     	}
 
     	else {
-    		console.log("You got " + correctAs + " out of" + totalQs + " correct!");		
+    		console.log("You got " + correctAs + " out of " + totalQs + " correct!");		
     	}		
 
     }	
@@ -86,6 +85,7 @@ $(document).ready(function(){
 	    	$("span").text(" " + countdownTimer); 
 	    	if (countdownTimer === 0) {
 	    	stop();
+	    	grade();
 	    	$("#results").css("display","block")
 			$("#mainSection").hide();
     		}
@@ -94,7 +94,8 @@ $(document).ready(function(){
 
 	$("#doneBtn").on("click", function(){
 		stop();
-        $("#results").css("display","block")
+		grade();
+        $("#results").css("display","block").text(correctAs);
 		$("#mainSection").hide();
 
 	});
