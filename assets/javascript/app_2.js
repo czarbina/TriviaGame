@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-	var countdownTimer = 60;    
+	var countdownTimer = 5;    
     var intervalId;
 
     function stop() {
@@ -21,6 +21,8 @@ $(document).ready(function(){
 	    	$("span").text(" " + countdownTimer); 
 	    	if (countdownTimer === 0) {
 	    	stop();
+	    	$("#results").css("display","block")
+			$("#mainSection").hide();
     		}
     	}	
 	}	
